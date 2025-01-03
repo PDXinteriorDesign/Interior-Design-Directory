@@ -16,6 +16,8 @@ import { ClientIntakeFormPage } from '../pages/templates/ClientIntakeFormPage';
 import { StateLocationPage } from '../pages/locations/StateLocationPage';
 import { CityLocationPage } from '../pages/locations/CityLocationPage';
 import { ArticlesPage } from '../pages/ArticlesPage';
+import { ListBusinessPage } from '../pages/ListBusinessPage';
+import { DesignersPage } from '../pages/DesignersPage';
 
 
 
@@ -42,5 +44,7 @@ export const AppRoutes: RouteConfig[] = [
   { path: '/location/:state', element: <StateLocationPage /> },
   { path: '/location/:state/:city', element: <CityLocationPage /> },
   { path: '/resources/articles', element: <ArticlesPage /> },
+  { path: '/list-with-us', element: <ListBusinessPage /> },
+  { path: '/designers', element: <DesignersPage /> },
 
 ];
