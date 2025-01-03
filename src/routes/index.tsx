@@ -18,7 +18,7 @@ import { CityLocationPage } from '../pages/locations/CityLocationPage';
 import { ArticlesPage } from '../pages/ArticlesPage';
 import { ListBusinessPage } from '../pages/ListBusinessPage';
 import { DesignersPage } from '../pages/DesignersPage';
-
+import { DesignerProfilePage } from '../pages/DesignerProfilePage';
 
 
 
@@ -46,5 +46,6 @@ export const AppRoutes: RouteConfig[] = [
   { path: '/resources/articles', element: <ArticlesPage /> },
   { path: '/list-with-us', element: <ListBusinessPage /> },
   { path: '/designers', element: <DesignersPage /> },
+  { path: '/designer/:id', element: <DesignerProfilePage /> },
 
 ];
