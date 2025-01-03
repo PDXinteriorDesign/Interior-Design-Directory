@@ -44,6 +44,12 @@ export const DesignersPage: React.FC = () => {
     "description": "Browse our curated selection of top interior designers and find the perfect match for your project.",
     "hasPart": allDesigners.map(designer => designerSchema(designer))
   };
+  console.log({ listings, loading, error }); // To debug useListings
+  console.log({ listingDesigners }); // To debug the transformed listings
+  console.log({ designers }); // To debug the static designers
+  console.log(allDesigners.map(designer => designerSchema(designer))); // To debug the schema
+
+
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -53,9 +59,9 @@ export const DesignersPage: React.FC = () => {
         schema={schema}
         canonicalUrl="/designers"
       />
-      
+
       <Navbar />
-      
+
       <main className="max-w-7xl mx-auto px-4 py-12">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-serif mb-4">Our Interior Designers</h1>

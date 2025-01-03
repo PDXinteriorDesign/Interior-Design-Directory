@@ -1,10 +1,21 @@
 rules_version = '2';
+
 service cloud.firestore {
   match /databases/{database}/documents {
-    // Allow public read access to approved listings
+
+    // Restrict access to listings collection
     match /listings/{listingId} {
+      // Public read access
       allow read: if true;
-      allow create: if true;
+
+      // Allow create with data validation
+      allow create: if request.resource.data.keys().hasAll(["title", "description", "price"]) 
+                    && request.resource.data.title is string
+                    && request.resource.data.description is string
+                    && request.resource.data.price is number
+                    && request.resource.data.price > 0;
+
+      // Disable update and delete
       allow update, delete: if false;
     }
   }
